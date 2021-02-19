@@ -1,11 +1,15 @@
 # SUPLOS
 _Prueba suplos desarrollador backend_
 
+![alt text](https://suplos.com/wp-content/uploads/2020/08/logo-suplos-intelcost.png)
+
+
 ### Paquetes Terceros
 
 - phpspreadsheet
 - phpdotenv
 - twig
+
 
 ### Pre-requisitos
 
