@@ -1,7 +1,7 @@
+![alt text](https://suplos.com/wp-content/uploads/2020/08/logo-suplos-intelcost.png)
+
 # SUPLOS
 _Prueba suplos desarrollador backend_
-
-![alt text](https://suplos.com/wp-content/uploads/2020/08/logo-suplos-intelcost.png)
 
 
 ### Paquetes Terceros
