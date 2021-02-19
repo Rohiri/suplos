@@ -36,7 +36,7 @@ composer install
 ```
 
 4. Configure las variables de entorno para base de datos
-- `DB_CONNECTION=` Variable de entorno para el tipo de base de datos
+- `DB_CONNECTION=` Variable de entorno para el tipo de base de datos (mysql o pgsql)
 - `DB_HOST=` Variable de entorno para el host de BD.
 - `DB_PORT=` Variable de entorno para el puerto de BD.
 - `DB_DATABASE=` Variable de entorno para el nombre de BD.
