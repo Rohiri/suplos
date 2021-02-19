@@ -1,30 +1,30 @@
 
 $(document).ready(function () {
 
-        $("#submitButton").click(() => {
+    $("#submitButton").click(() => {
 
-        	$("#div_results_search").html('');
-        	$("#length_results").html('');
+    	$("#div_results_search").html('');
+    	$("#length_results").html('');
 
-        	$.ajax({
-                url: './data/index',
-                type: 'get',
-                dataType: 'json',
-                data: {
-                	city: $('#selectCiudad').val(),
-                	type: $('#selecTipo').val()
-                }
-            })
-            .done(function(data, textStatus, jqXHR) {
-            	$("#length_results").html(data.total_real_states);
+    	$.ajax({
+            url: './data/index',
+            type: 'get',
+            dataType: 'json',
+            data: {
+            	city: $('#selectCiudad').val(),
+            	type: $('#selecTipo').val()
+            }
+        })
+        .done(function(data, textStatus, jqXHR) {
+        	$("#length_results").html(data.total_real_states);
 
-            	const resultados = Object.entries(data.real_states);
-            	resultados.forEach(result => render(result, "#div_results_search"))
-            })
-            .fail(function(jqXHR, textStatus, errorThrown) {
-            })
-            .always(function(data, textStatus, jqXHR) {
-            });
+        	const resultados = Object.entries(data.real_states);
+        	resultados.forEach(result => render(result, "#div_results_search"))
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+        })
+        .always(function(data, textStatus, jqXHR) {
+        });
 
     });
 
@@ -44,7 +44,7 @@ $(document).ready(function () {
 	                <li>Tipo: <span>${result[1].Tipo}</span></li>
 	                <li>Precio: <span>${result[1].Precio}</span></li>
 	            </ul>
-	            <button class="btn-green btn_delete" data-real="${result[1].Id}">
+	            <button class="btn-green btn_save" id="saveReal" data-real="${result[1].Id}">
 	                    GUARDAR
 	            </button>
 	        </div>
