@@ -15,7 +15,7 @@ abstract class Modelo
         static $db = null;
 
         if ($db === null) {
-            $dsn = 'pgsql:host=localhost;port=5432;dbname=intelcost_bienes';
+            $dsn = "{$_ENV['DB_CONNECTION']}:host={$_ENV['DB_HOST']};port={$_ENV['DB_PORT']};dbname={$_ENV['DB_DATABASE']}";
             $db = new PDO($dsn, $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
 
             // Throw an Exception when an error occurs
