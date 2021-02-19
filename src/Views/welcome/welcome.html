@@ -80,9 +80,27 @@
             <div id="tabs-2">
                 <div class="colContenido" id="divResultadosBusqueda">
                     <div class="tituloContenido card" style="justify-content: center;">
-                        <h5>Bienes guardados: <span id="length_bienes"></span></h5>
+                        <h5>Bienes guardados: <span id="length_bienes">{{user_total_real_states}}</span></h5>
                         <div class="divider"></div>
-                        <div id="divBienes"></div>
+                        <div id="divBienes">
+                            {% for real in user_real_states %}
+                                <div class="div_resultado">
+                                    <div class="div_resultado_img">
+                                        <img width="100%" src="img/home.jpg" alt="Result">
+                                    </div>
+                                    <div class="div_resultado_informacion">
+                                        <ul>
+                                            <li>Dirección: <span>{{real.addres}}</span></li>
+                                            <li>Ciudad: <span>{{real.city_name}}</span></li>
+                                            <li>Teléfono: <span>{{real.phone}}</span></li>
+                                            <li>Código Postal: <span>{{real.postal_code}}</span></li>
+                                            <li>Tipo: <span>{{real.type_name}}</span></li>
+                                            <li>Precio: <span>{{real.price}}</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            {% endfor%}
+                        </div>
                     </div>
                 </div>
             </div>
