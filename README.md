@@ -1,4 +1,4 @@
-# suplosBackEnd
+# SUPLOS
 _Prueba suplos desarrollador backend_
 
 ### Paquetes Terceros
