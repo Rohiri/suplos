@@ -40,4 +40,23 @@ class Bienes extends Modelo
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
+    public static function insert($request)
+    {
+        $db = static::getDatabase();
+        $stmt = $db->prepare('INSERT INTO realstate (addres,phone,postal_code,price,city_id,type_id)
+        	VALUES(?,?,?,?,?,?)');
+
+        $stmt->bindParam(1,$request['direccion'],PDO::PARAM_INT);
+        $stmt->bindParam(2,$request['telefono'],PDO::PARAM_INT);
+        $stmt->bindParam(3,$request['codigo_postal'],PDO::PARAM_INT);
+        $stmt->bindParam(4,$request['price'],PDO::PARAM_INT);
+        $stmt->bindParam(5,$request['city_id'],PDO::PARAM_INT);
+        $stmt->bindParam(6,$request['type_id'],PDO::PARAM_INT);
+        $stmt->execute();
+
+    }
+
+
+
 }
