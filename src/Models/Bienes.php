@@ -50,12 +50,30 @@ class Bienes extends Modelo
         	$stmt = $db->prepare('INSERT INTO realstate (addres,phone,postal_code,price,city_id,type_id)
         	VALUES(?,?,?,?,?,?)');
 
-	        $stmt->bindParam(1,$request['direccion'],PDO::PARAM_INT);
-	        $stmt->bindParam(2,$request['telefono'],PDO::PARAM_INT);
-	        $stmt->bindParam(3,$request['codigo_postal'],PDO::PARAM_INT);
-	        $stmt->bindParam(4,$request['price'],PDO::PARAM_INT);
+	        $stmt->bindParam(1,$request['direccion'],PDO::PARAM_STR);
+	        $stmt->bindParam(2,$request['telefono'],PDO::PARAM_STR);
+	        $stmt->bindParam(3,$request['codigo_postal'],PDO::PARAM_STR);
+	        $stmt->bindParam(4,$request['price'],PDO::PARAM_STR);
 	        $stmt->bindParam(5,$request['city_id'],PDO::PARAM_INT);
 	        $stmt->bindParam(6,$request['type_id'],PDO::PARAM_INT);
+	        $stmt->execute();
+        	$db->commit();
+        } catch (Exception $e) {
+        	$db->rollback();
+        }
+    }
+
+
+    public static function delete($request)
+    {
+        $db = static::getDatabase();
+
+        try {
+        	$db->beginTransaction();
+        	$stmt = $db->prepare('DELETE FROM realstate WHERE id = ?');
+
+	        $stmt->bindParam(1,$request['id'],PDO::PARAM_INT);
+
 	        $stmt->execute();
         	$db->commit();
         } catch (Exception $e) {
