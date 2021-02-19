@@ -143,3 +143,24 @@ video#vidFondo {
 .card-action{
   text-align: right;
 }
+
+
+.div_resultado {
+    width: 100%;
+    box-shadow: -2px 3px 17px -10px rgba(152, 60, 115, 1);
+    padding: 20px;
+    height: 270px;
+}
+
+.div_resultado_img {
+    width: 40% !important;
+    float: left;
+    padding: 5px;
+}
+
+.div_resultado_informacion {
+    padding: 0 5px;
+    width: 60%;
+    float: left;
+}
+
