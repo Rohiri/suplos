@@ -115,13 +115,14 @@
                                 <h5>Filtros</h5>
                             </div>
 
-                            <form action="php/reporte.php" method="post">
+                            <!-- <form action="data/excel" method="GET"> -->
+                            <form action="php/reporte.php" method="GET">
                                 <div class="filtroCiudad input-field">
                                     <p><label for="selectCiudadReporte">Ciudad:</label><br></p>
                                     <select name="ciudad" id="selectCiudadReporte" required>
                                         <option value="" selected>Elige una ciudad</option>
-                                        {% for city in cities %}
-                                        <option value="{{city}}">{{city}}</option>
+                                        {% for city in cities_database %}
+                                        <option value="{{city.id}}">{{city.city_name}}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
@@ -129,8 +130,8 @@
                                 <div class="filtroTipo input-field">
                                     <p><label for="selectTipoReporte">Tipo:</label><br></p>
                                     <select name="tipo" id="selectTipoReporte" required>
-                                        {% for type in types %}
-                                        <option value="{{type}}">{{type}}</option>
+                                        {% for type in types_database %}
+                                        <option value="{{type.id}}">{{type.type_name}}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
